@@ -74,7 +74,35 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-main); color: var(--text-primary); padding: 1.5rem 1rem 4rem 1rem; min-height: 100vh; }
-        .container { max-width: 1080px; margin: 0 auto; }
+        .container { max-width: 1080px; margin: 0 auto; display: none; }
+
+        /* PIN LOCK SCREEN */
+        .pin-screen-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #0a0a0a; z-index: 9999; display: flex;
+            align-items: center; justify-content: center; flex-direction: column; padding: 1.5rem;
+        }
+        .pin-card {
+            background: var(--bg-card); border: 1px solid var(--border-subtle);
+            border-radius: 28px; padding: 2.5rem 2rem; width: 100%; max-width: 360px;
+            text-align: center; box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+        }
+        .pin-icon { font-size: 2.8rem; margin-bottom: 0.75rem; }
+        .pin-title { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem; }
+        .pin-desc { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.75rem; }
+        
+        .pin-input {
+            width: 100%; background: var(--bg-card-inner); border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill); padding: 0.9rem 1rem; color: #ffffff;
+            font-size: 1.2rem; font-weight: 800; text-align: center; letter-spacing: 0.3em;
+            margin-bottom: 1.25rem; transition: all 0.25s;
+        }
+        .pin-input:focus { outline: none; border-color: var(--green-accent); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); }
+
+        .pin-error {
+            color: var(--red-accent); font-size: 0.78rem; font-weight: 700;
+            margin-top: -0.5rem; margin-bottom: 1rem; display: none;
+        }
 
         /* Floating Nav */
         .navbar-wrapper { display: flex; justify-content: center; margin-bottom: 2rem; position: sticky; top: 1rem; z-index: 100; }
@@ -100,6 +128,13 @@
             font-size: 0.8rem; font-weight: 800; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px;
         }
         .qris-nav-btn:hover { background: var(--qris-accent); color: #000; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); }
+
+        .btn-lock {
+            background: var(--bg-pill); border: 1px solid var(--border-subtle);
+            padding: 6px 12px; border-radius: var(--radius-pill); color: var(--text-secondary);
+            font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.3s;
+        }
+        .btn-lock:hover { color: var(--red-accent); border-color: var(--red-border); background: var(--red-bg); }
 
         .cart-icon-btn {
             background: var(--bg-pill); border: 1px solid var(--border-subtle);
@@ -384,7 +419,22 @@
 </head>
 <body>
 
-    <div class="container">
+    <!-- SCREEN PROTEKSI PIN -->
+    <div class="pin-screen-overlay" id="pinOverlay">
+        <div class="pin-card">
+            <div class="pin-icon">🔐</div>
+            <div class="pin-title">Sistem Kasir Terkunci</div>
+            <div class="pin-desc">Masukkan 6 digit PIN untuk mengakses data transaksi.</div>
+            
+            <form onsubmit="verifyPin(event)">
+                <input type="password" id="pinInput" class="pin-input" maxlength="6" placeholder="••••••" autofocus required>
+                <div class="pin-error" id="pinError">PIN Salah! Silakan coba lagi.</div>
+                <button type="submit" class="btn-primary-white">Buka Akses</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer">
         <!-- Floating Nav -->
         <div class="navbar-wrapper">
             <nav class="navbar">
@@ -399,6 +449,7 @@
                         <span>Total Tx</span>
                         <span class="cart-badge" id="navCount">0</span>
                     </div>
+                    <button class="btn-lock" onclick="lockSystem()" title="Kunci Aplikasi">🔒 Kunci</button>
                 </div>
             </nav>
         </div>
@@ -671,8 +722,7 @@
             <div class="modal-desc" style="text-align:center; margin-bottom:1rem;">Silakan scan QRIS di bawah ini menggunakan e-Wallet atau M-Banking.</div>
             
             <div class="qris-img-box">
-                <!-- GAMBAR DISIAPKAN UNTUK qris.jpg -->
-                <img id="qrisImageSrc" src="qris.jpeg" alt="QRIS Code Pembayaran">
+                <img id="qrisImageSrc" src="qris.jpg" alt="QRIS Code Pembayaran">
             </div>
 
             <div class="modal-actions">
@@ -739,6 +789,34 @@
     </div>
 
     <script>
+        const CORRECT_PIN = "170309";
+
+        function verifyPin(e) {
+            e.preventDefault();
+            const inputVal = document.getElementById('pinInput').value;
+            const errEl = document.getElementById('pinError');
+
+            if (inputVal === CORRECT_PIN) {
+                sessionStorage.setItem('harbor_finance_auth', 'true');
+                document.getElementById('pinOverlay').style.display = 'none';
+                document.getElementById('mainContainer').style.display = 'block';
+                init();
+            } else {
+                errEl.style.display = 'block';
+                document.getElementById('pinInput').value = '';
+                document.getElementById('pinInput').focus();
+            }
+        }
+
+        function lockSystem() {
+            sessionStorage.removeItem('harbor_finance_auth');
+            document.getElementById('mainContainer').style.display = 'none';
+            document.getElementById('pinOverlay').style.display = 'flex';
+            document.getElementById('pinInput').value = '';
+            document.getElementById('pinError').style.display = 'none';
+            document.getElementById('pinInput').focus();
+        }
+
         const initialData = [
             // 5 Agustus 2026
             { id: 208, desc: 'Bevin', amount: 5000, qty: 1, type: 'income', method: 'QRIS', category: 'Makaroni', date: '2026-08-05' },
@@ -787,6 +865,17 @@
         const btnCancelEdit = document.getElementById('btnCancelEdit');
         const formTitleText = document.getElementById('formTitleText');
 
+        function checkAuth() {
+            if (sessionStorage.getItem('harbor_finance_auth') === 'true') {
+                document.getElementById('pinOverlay').style.display = 'none';
+                document.getElementById('mainContainer').style.display = 'block';
+                init();
+            } else {
+                document.getElementById('pinOverlay').style.display = 'flex';
+                document.getElementById('mainContainer').style.display = 'none';
+            }
+        }
+
         function init() {
             setType('income');
             renderDateGrid();
@@ -794,7 +883,6 @@
             handleCategoryChange(categorySelect.value);
         }
 
-        /* MODAL QRIS CONTROLLER */
         function openQrisModal() {
             document.getElementById('qrisModal').classList.add('active-modal');
         }
@@ -1487,7 +1575,7 @@
             }
         }
 
-        init();
+        checkAuth();
     </script>
 </body>
 </html>

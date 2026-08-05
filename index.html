@@ -45,7 +45,6 @@
             --po-bg: rgba(168, 85, 247, 0.12);
             --po-border: rgba(168, 85, 247, 0.3);
             
-            /* Category Accents */
             --cat-makaroni-color: #f59e0b;
             --cat-makaroni-bg: rgba(245, 158, 11, 0.15);
             --cat-makaroni-border: rgba(245, 158, 11, 0.35);
@@ -62,7 +61,6 @@
             --cat-lainnya-bg: rgba(56, 189, 248, 0.15);
             --cat-lainnya-border: rgba(56, 189, 248, 0.35);
 
-            /* Loyalty Badges */
             --gold-color: #fbbf24;
             --silver-color: #9ca3af;
             --bronze-color: #d97706;
@@ -74,35 +72,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg-main); color: var(--text-primary); padding: 1.5rem 1rem 4rem 1rem; min-height: 100vh; }
-        .container { max-width: 1080px; margin: 0 auto; display: none; }
-
-        /* PIN LOCK SCREEN */
-        .pin-screen-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #0a0a0a; z-index: 9999; display: flex;
-            align-items: center; justify-content: center; flex-direction: column; padding: 1.5rem;
-        }
-        .pin-card {
-            background: var(--bg-card); border: 1px solid var(--border-subtle);
-            border-radius: 28px; padding: 2.5rem 2rem; width: 100%; max-width: 360px;
-            text-align: center; box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-        }
-        .pin-icon { font-size: 2.8rem; margin-bottom: 0.75rem; }
-        .pin-title { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem; }
-        .pin-desc { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1.75rem; }
-        
-        .pin-input {
-            width: 100%; background: var(--bg-card-inner); border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-pill); padding: 0.9rem 1rem; color: #ffffff;
-            font-size: 1.2rem; font-weight: 800; text-align: center; letter-spacing: 0.3em;
-            margin-bottom: 1.25rem; transition: all 0.25s;
-        }
-        .pin-input:focus { outline: none; border-color: var(--green-accent); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); }
-
-        .pin-error {
-            color: var(--red-accent); font-size: 0.78rem; font-weight: 700;
-            margin-top: -0.5rem; margin-bottom: 1rem; display: none;
-        }
+        .container { max-width: 1080px; margin: 0 auto; }
 
         /* Floating Nav */
         .navbar-wrapper { display: flex; justify-content: center; margin-bottom: 2rem; position: sticky; top: 1rem; z-index: 100; }
@@ -129,19 +99,19 @@
         }
         .qris-nav-btn:hover { background: var(--qris-accent); color: #000; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); }
 
-        .btn-lock {
+        .btn-auth {
             background: var(--bg-pill); border: 1px solid var(--border-subtle);
-            padding: 6px 12px; border-radius: var(--radius-pill); color: var(--text-secondary);
+            padding: 6px 12px; border-radius: var(--radius-pill); color: #ffffff;
             font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.3s;
         }
-        .btn-lock:hover { color: var(--red-accent); border-color: var(--red-border); background: var(--red-bg); }
+        .btn-auth:hover { border-color: var(--green-accent); background: var(--green-bg); color: var(--green-accent); }
+        .btn-auth.admin-active { border-color: var(--cash-accent); background: var(--cash-bg); color: var(--cash-accent); }
 
         .cart-icon-btn {
             background: var(--bg-pill); border: 1px solid var(--border-subtle);
             padding: 6px 14px; border-radius: var(--radius-pill); color: #ffffff;
             font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 8px; transition: all 0.3s;
         }
-        .cart-icon-btn:hover { border-color: var(--green-accent); transform: translateY(-2px); }
         .cart-badge { background: var(--green-accent); color: #000; font-size: 0.7rem; font-weight: 800; padding: 1px 7px; border-radius: var(--radius-pill); }
 
         .hero-header { text-align: center; margin-bottom: 2rem; }
@@ -151,15 +121,12 @@
         .hero-subtitle { color: var(--text-secondary); font-size: 0.95rem; max-width: 520px; margin: 0 auto; }
 
         /* KARTU RINGKASAN GLOBAL & WEEKLY METRICS */
-        .global-stats-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;
-        }
+        .global-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
         .global-card {
             background: linear-gradient(145deg, #181818 0%, #121212 100%);
             border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 1.25rem 1.4rem;
             position: relative; overflow: hidden; transition: all 0.3s ease;
         }
-        .global-card:hover { border-color: rgba(255, 255, 255, 0.2); transform: translateY(-3px); }
         .global-card-label { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
         .global-card-value { font-size: 1.6rem; font-weight: 900; color: #ffffff; }
         .global-card-value.income { color: var(--green-accent); }
@@ -167,9 +134,7 @@
         .global-card-sub { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
 
         /* TOOLBAR EKSPOR & BACKUP DATA */
-        .data-toolbar {
-            display: flex; gap: 0.75rem; justify-content: flex-end; margin-bottom: 2rem; flex-wrap: wrap;
-        }
+        .data-toolbar { display: flex; gap: 0.75rem; justify-content: flex-end; margin-bottom: 2rem; flex-wrap: wrap; }
         .btn-toolbar {
             background: var(--bg-card); border: 1px solid var(--border-subtle); color: #ffffff;
             padding: 8px 16px; border-radius: var(--radius-pill); font-size: 0.78rem; font-weight: 700;
@@ -193,7 +158,7 @@
             border-radius: 20px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;
             cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); user-select: none; flex-shrink: 0; position: relative;
         }
-        .date-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+        .date-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
         .date-card.active { background: var(--bg-card-inner); border: 2px solid var(--green-accent); box-shadow: 0 0 20px rgba(16, 185, 129, 0.25); transform: scale(1.03); }
 
         .date-card-header { display: flex; align-items: center; justify-content: space-between; }
@@ -202,9 +167,7 @@
         .date-card-saldo-label { font-size: 0.65rem; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }
         .date-card-saldo-val { font-size: 0.88rem; font-weight: 800; color: var(--green-accent); }
 
-        .date-card-actions {
-            position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; opacity: 0; transition: opacity 0.25s;
-        }
+        .date-card-actions { position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; opacity: 0; transition: opacity 0.25s; }
         .date-card:hover .date-card-actions { opacity: 1; }
         .btn-date-action {
             background: rgba(0,0,0,0.6); border: none; color: #fff; width: 22px; height: 22px; border-radius: 50%;
@@ -230,7 +193,6 @@
             background-color: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 1.5rem;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;
         }
-        .summary-card:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
 
         .summary-tag { display: inline-block; padding: 4px 10px; background: var(--green-bg); border: 1px solid var(--green-border); color: var(--green-accent); border-radius: var(--radius-pill); font-size: 0.7rem; font-weight: 700; margin-bottom: 1rem; }
         .summary-tag.expense { background: var(--red-bg); border-color: var(--red-border); color: var(--red-accent); }
@@ -239,13 +201,12 @@
         .summary-value.income { color: var(--green-accent); }
         .summary-value.expense { color: var(--red-accent); }
 
-        /* Cash vs QRIS vs Kasbon Breakdown Row */
+        /* Breakdown Cards Row */
         .method-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
         .method-card {
             background: var(--bg-card-inner); border: 1px solid var(--border-subtle); border-radius: var(--radius-card);
             padding: 1.15rem 1.4rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s;
         }
-        .method-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
         .method-card-info h4 { font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.2rem; }
         .method-card-info .amount { font-size: 1.4rem; font-weight: 800; color: #ffffff; }
 
@@ -256,6 +217,7 @@
         .badge-method-summary.po { background: var(--po-bg); border: 1px solid var(--po-border); color: var(--po-accent); }
 
         .content-layout { display: grid; grid-template-columns: 1fr 1.35fr; gap: 1.5rem; }
+        .content-layout.full-width { grid-template-columns: 1fr; }
         @media (max-width: 840px) { .content-layout { grid-template-columns: 1fr; } }
 
         .harbor-card { background-color: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 1.75rem; }
@@ -286,7 +248,6 @@
             width: 100%; background-color: var(--bg-card-inner); border: 1px solid var(--border-subtle);
             border-radius: 12px; padding: 0.85rem 1rem; color: #ffffff; font-size: 0.95rem; transition: all 0.25s;
         }
-        .form-input:disabled { opacity: 0.6; cursor: not-allowed; background-color: #111; }
         .form-input:focus { outline: none; border-color: #ffffff; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1); }
 
         .custom-category-box { display: none; margin-top: 0.75rem; animation: fadeIn 0.3s ease; }
@@ -337,7 +298,6 @@
             background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 1.75rem;
             display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: all 0.3s;
         }
-        .product-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
 
         .product-card.makaroni { border-top: 4px solid var(--cat-makaroni-color); }
         .product-card.basreng { border-top: 4px solid var(--cat-basreng-color); }
@@ -364,7 +324,6 @@
             background: var(--bg-card-inner); border: 1px solid var(--border-subtle); border-radius: 16px;
             padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s; margin-bottom: 0.85rem;
         }
-        .point-rank-card:hover { border-color: var(--border-hover); transform: translateX(4px); }
         .rank-num { font-size: 1.4rem; font-weight: 900; color: var(--text-muted); min-width: 35px; }
         .rank-top-1 { color: var(--gold-color); }
         .rank-top-2 { color: var(--silver-color); }
@@ -399,7 +358,6 @@
             flex: 1; background: var(--bg-card-inner); border: 1px solid var(--border-subtle); color: var(--text-secondary);
             padding: 0.8rem; border-radius: var(--radius-pill); font-weight: 700; cursor: pointer; transition: all 0.2s;
         }
-        .btn-modal-cancel:hover { color: #ffffff; border-color: var(--border-hover); }
 
         .qris-img-box {
             background: #ffffff; padding: 12px; border-radius: 16px; display: inline-block; margin: 0 auto;
@@ -407,32 +365,20 @@
         }
         .qris-img-box img { width: 100%; max-width: 260px; height: auto; border-radius: 8px; display: block; }
 
-        /* PRINT FORMAT */
-        @media print {
-            body { background: #ffffff !important; color: #000000 !important; padding: 0; }
-            .navbar-wrapper, .data-toolbar, .date-section-wrapper, .harbor-card:first-child, .btn-action-icon, .filter-pill-container, .btn-edit-stock { display: none !important; }
-            .container { max-width: 100% !important; margin: 0; }
-            .summary-card, .method-card, .harbor-card, .global-card, .product-card, .point-rank-card { background: #ffffff !important; border: 1px solid #ddd !important; color: #000000 !important; }
-            .summary-value, .amount, .tx-title, .tx-val, .product-stat-qty, .point-val, .point-user-name { color: #000000 !important; }
+        .pin-input {
+            width: 100%; background: var(--bg-card-inner); border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill); padding: 0.85rem 1rem; color: #ffffff;
+            font-size: 1.2rem; font-weight: 800; text-align: center; letter-spacing: 0.3em;
+            margin-bottom: 1rem; transition: all 0.25s;
         }
+
+        /* ADMIN ONLY ELEMENTS VISIBILITY */
+        .admin-only { display: none !important; }
+        body.is-admin .admin-only { display: flex !important; }
+        body.is-admin div.admin-only { display: block !important; }
     </style>
 </head>
 <body>
-
-    <!-- SCREEN PROTEKSI PIN -->
-    <div class="pin-screen-overlay" id="pinOverlay">
-        <div class="pin-card">
-            <div class="pin-icon">🔐</div>
-            <div class="pin-title">Sistem Kasir Terkunci</div>
-            <div class="pin-desc">Masukkan 6 digit PIN untuk mengakses data transaksi.</div>
-            
-            <form onsubmit="verifyPin(event)">
-                <input type="password" id="pinInput" class="pin-input" maxlength="6" placeholder="••••••" autofocus required>
-                <div class="pin-error" id="pinError">PIN Salah! Silakan coba lagi.</div>
-                <button type="submit" class="btn-primary-white">Buka Akses</button>
-            </form>
-        </div>
-    </div>
 
     <div class="container" id="mainContainer">
         <!-- Floating Nav -->
@@ -449,7 +395,7 @@
                         <span>Total Tx</span>
                         <span class="cart-badge" id="navCount">0</span>
                     </div>
-                    <button class="btn-lock" onclick="lockSystem()" title="Kunci Aplikasi">🔒 Kunci</button>
+                    <button class="btn-auth" id="btnAdminAuth" onclick="handleAuthClick()">🔓 Masuk Admin</button>
                 </div>
             </nav>
         </div>
@@ -461,8 +407,8 @@
             <p class="hero-subtitle" id="pageSubtitle">Kelola pencatatan pemasukan dan pengeluaran harian Anda dengan praktis.</p>
         </header>
 
-        <!-- TOOLBAR EXPORT & BACKUP DATA -->
-        <div class="data-toolbar">
+        <!-- TOOLBAR EXPORT & BACKUP DATA (ADMIN ONLY) -->
+        <div class="data-toolbar admin-only">
             <button class="btn-toolbar" onclick="window.print()">📄 Print / PDF Laporan</button>
             <button class="btn-toolbar" onclick="exportToCSV()">📊 Export CSV (Excel)</button>
             <button class="btn-toolbar" onclick="downloadJSONBackup()">💾 Download Backup Data</button>
@@ -551,9 +497,9 @@
             </div>
 
             <!-- Layout Form & Riwayat -->
-            <div class="content-layout">
-                <!-- Form Card -->
-                <div class="harbor-card">
+            <div class="content-layout" id="overviewLayout">
+                <!-- Form Card (ADMIN ONLY) -->
+                <div class="harbor-card admin-only">
                     <div class="card-header-title">
                         <span id="formTitleText">Tambah Catatan</span>
                         <span id="formDateLabel" style="font-size:0.8rem; color:var(--green-accent); font-weight:700;"></span>
@@ -649,10 +595,10 @@
                             <div class="product-name">
                                 <span>🍿 Makaroni</span>
                             </div>
-                            <button class="btn-edit-stock" onclick="openStockModal('Makaroni')">✏️ Edit Stok Target</button>
+                            <button class="btn-edit-stock admin-only" onclick="openStockModal('Makaroni')">✏️ Edit Stok Target</button>
                         </div>
                         <div class="product-stat-main">
-                            <div class="product-stat-qty" id="makaroniQty">0 / 20 Porsi</div>
+                            <div class="product-stat-qty" id="makaroniQty">0 / 22 Porsi</div>
                             <div class="product-stat-label" id="makaroniScopeLabel">Terjual / Target Stok (Hari Ini)</div>
                             <div class="product-stat-omzet" id="makaroniOmzet">Omzet: Rp 0</div>
                         </div>
@@ -675,7 +621,7 @@
                             <div class="product-name">
                                 <span>🍢 Basreng</span>
                             </div>
-                            <button class="btn-edit-stock" onclick="openStockModal('Basreng')">✏️ Edit Stok Target</button>
+                            <button class="btn-edit-stock admin-only" onclick="openStockModal('Basreng')">✏️ Edit Stok Target</button>
                         </div>
                         <div class="product-stat-main">
                             <div class="product-stat-qty" id="basrengQty">0 / 20 Porsi</div>
@@ -712,6 +658,22 @@
                 </div>
                 <div id="pointLeaderboardList"></div>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL ADMIN AUTH PIN -->
+    <div class="modal-overlay" id="pinModal">
+        <div class="modal-card">
+            <div class="modal-title" style="text-align:center;">🔐 Masukkan PIN Admin</div>
+            <div class="modal-desc" style="text-align:center; margin-bottom:1rem;">Masukkan 6-digit PIN untuk mengaktifkan Mode Admin.</div>
+            
+            <form onsubmit="verifyPin(event)">
+                <input type="password" id="pinInput" class="pin-input" maxlength="6" placeholder="••••••" required>
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal-cancel" onclick="closePinModal()">Batal</button>
+                    <button type="submit" class="btn-primary-white" style="flex:1;">Masuk</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -757,7 +719,7 @@
             
             <div class="form-item">
                 <label for="stockInput">Target Jumlah Stok (Porsi / 0 jika Kosong)</label>
-                <input type="number" id="stockInput" class="form-input" min="0" value="20">
+                <input type="number" id="stockInput" class="form-input" min="0" value="22">
             </div>
 
             <div class="modal-actions">
@@ -790,31 +752,58 @@
 
     <script>
         const CORRECT_PIN = "170309";
+        let isAdmin = sessionStorage.getItem('harbor_finance_auth') === 'true';
+
+        function handleAuthClick() {
+            if (isAdmin) {
+                sessionStorage.removeItem('harbor_finance_auth');
+                isAdmin = false;
+                applyAdminState();
+            } else {
+                openPinModal();
+            }
+        }
+
+        function openPinModal() {
+            document.getElementById('pinInput').value = '';
+            document.getElementById('pinModal').classList.add('active-modal');
+            document.getElementById('pinInput').focus();
+        }
+
+        function closePinModal() {
+            document.getElementById('pinModal').classList.remove('active-modal');
+        }
 
         function verifyPin(e) {
             e.preventDefault();
             const inputVal = document.getElementById('pinInput').value;
-            const errEl = document.getElementById('pinError');
-
             if (inputVal === CORRECT_PIN) {
                 sessionStorage.setItem('harbor_finance_auth', 'true');
-                document.getElementById('pinOverlay').style.display = 'none';
-                document.getElementById('mainContainer').style.display = 'block';
-                init();
+                isAdmin = true;
+                closePinModal();
+                applyAdminState();
             } else {
-                errEl.style.display = 'block';
+                alert('PIN Admin Salah!');
                 document.getElementById('pinInput').value = '';
-                document.getElementById('pinInput').focus();
             }
         }
 
-        function lockSystem() {
-            sessionStorage.removeItem('harbor_finance_auth');
-            document.getElementById('mainContainer').style.display = 'none';
-            document.getElementById('pinOverlay').style.display = 'flex';
-            document.getElementById('pinInput').value = '';
-            document.getElementById('pinError').style.display = 'none';
-            document.getElementById('pinInput').focus();
+        function applyAdminState() {
+            const btnAuth = document.getElementById('btnAdminAuth');
+            const overviewLayout = document.getElementById('overviewLayout');
+
+            if (isAdmin) {
+                document.body.classList.add('is-admin');
+                btnAuth.textContent = '🔒 Keluar Admin';
+                btnAuth.classList.add('admin-active');
+                if (overviewLayout) overviewLayout.classList.remove('full-width');
+            } else {
+                document.body.classList.remove('is-admin');
+                btnAuth.textContent = '🔓 Masuk Admin';
+                btnAuth.classList.remove('admin-active');
+                if (overviewLayout) overviewLayout.classList.add('full-width');
+            }
+            render();
         }
 
         const initialData = [
@@ -835,7 +824,8 @@
         let transactions = JSON.parse(localStorage.getItem('harbor_finance_v17_tx')) || initialData;
         let createdDates = JSON.parse(localStorage.getItem('harbor_finance_v17_dates')) || ['2026-08-04', '2026-08-05'];
         
-        let productStocksDaily = JSON.parse(localStorage.getItem('harbor_finance_v17_stocks_daily')) || { Makaroni: 20, Basreng: 0 };
+        // TARGET STOK DITAMBAHKAN MENJADI 22 UNTUK MAKARONI
+        let productStocksDaily = JSON.parse(localStorage.getItem('harbor_finance_v17_stocks_daily')) || { Makaroni: 22, Basreng: 0 };
         let productStocksWeekly = JSON.parse(localStorage.getItem('harbor_finance_v17_stocks_weekly')) || { Makaroni: 100, Basreng: 50 };
 
         let activeStockProduct = 'Makaroni';
@@ -865,18 +855,8 @@
         const btnCancelEdit = document.getElementById('btnCancelEdit');
         const formTitleText = document.getElementById('formTitleText');
 
-        function checkAuth() {
-            if (sessionStorage.getItem('harbor_finance_auth') === 'true') {
-                document.getElementById('pinOverlay').style.display = 'none';
-                document.getElementById('mainContainer').style.display = 'block';
-                init();
-            } else {
-                document.getElementById('pinOverlay').style.display = 'flex';
-                document.getElementById('mainContainer').style.display = 'none';
-            }
-        }
-
         function init() {
+            applyAdminState();
             setType('income');
             renderDateGrid();
             selectDate(selectedDate);
@@ -1019,7 +999,7 @@
             document.getElementById('stockModalDesc').textContent = `Masukkan target porsi stok khusus cakupan ${scopeLabel}.`;
             
             const targetObj = productScope === 'daily' ? productStocksDaily : productStocksWeekly;
-            document.getElementById('stockInput').value = targetObj[prodName] !== undefined ? targetObj[prodName] : 20;
+            document.getElementById('stockInput').value = targetObj[prodName] !== undefined ? targetObj[prodName] : (prodName === 'Makaroni' ? 22 : 20);
             document.getElementById('stockModal').classList.add('active-modal');
         }
 
@@ -1108,7 +1088,7 @@
 
                 return `
                     <div class="date-card ${isActive}" onclick="selectDate('${dStr}')">
-                        <div class="date-card-actions">
+                        <div class="date-card-actions admin-only">
                             <button class="btn-date-action" title="Hapus Tanggal Ini" onclick="deleteDate('${dStr}', event)">✕</button>
                         </div>
                         <div class="date-card-header">
@@ -1123,12 +1103,14 @@
                 `;
             }).join('');
 
-            gridHTML += `
-                <div class="btn-add-date-card" onclick="openDateModal()">
-                    <span style="font-size:1.5rem;">+</span>
-                    <span>Tambah Hari</span>
-                </div>
-            `;
+            if (isAdmin) {
+                gridHTML += `
+                    <div class="btn-add-date-card" onclick="openDateModal()">
+                        <span style="font-size:1.5rem;">+</span>
+                        <span>Tambah Hari</span>
+                    </div>
+                `;
+            }
 
             dateGrid.innerHTML = gridHTML;
         }
@@ -1355,7 +1337,9 @@
                 const qtyLabel = (tx.type === 'income' && tx.qty > 1) ? `<span style="font-size:0.75rem; color:#f59e0b; font-weight:800;">(${tx.qty}x)</span>` : '';
                 
                 const isSettleable = tx.method === 'Belum Bayar' || tx.method === 'PO Pending';
-                const settleBtn = isSettleable ? `<button class="btn-action-icon settle" title="Update Status Lunas/Kirim" onclick="openSettleModal(${tx.id})">✅</button>` : '';
+                const settleBtn = (isSettleable && isAdmin) ? `<button class="btn-action-icon settle" title="Update Status Lunas/Kirim" onclick="openSettleModal(${tx.id})">✅</button>` : '';
+                const editBtn = isAdmin ? `<button class="btn-action-icon edit" title="Edit Transaksi Ini" onclick="editTx(${tx.id})">✏️</button>` : '';
+                const deleteBtn = isAdmin ? `<button class="btn-action-icon delete" title="Hapus Transaksi Ini" onclick="deleteTx(${tx.id})">✕</button>` : '';
 
                 return `
                     <li class="tx-card-item">
@@ -1370,8 +1354,8 @@
                         <div style="display:flex; align-items:center; gap:0.5rem;">
                             <div class="tx-val ${tx.type}">${tx.type === 'income' ? '+' : '-'}${formatRp(tx.amount)}</div>
                             ${settleBtn}
-                            <button class="btn-action-icon edit" title="Edit Transaksi Ini" onclick="editTx(${tx.id})">✏️</button>
-                            <button class="btn-action-icon delete" title="Hapus Transaksi Ini" onclick="deleteTx(${tx.id})">✕</button>
+                            ${editBtn}
+                            ${deleteBtn}
                         </div>
                     </li>
                 `;
@@ -1400,7 +1384,7 @@
             const basrengOmzet = basrengTx.reduce((acc, t) => acc + t.amount, 0);
 
             const activeStocks = productScope === 'daily' ? productStocksDaily : productStocksWeekly;
-            const makaroniTarget = activeStocks.Makaroni !== undefined ? activeStocks.Makaroni : (productScope === 'daily' ? 20 : 100);
+            const makaroniTarget = activeStocks.Makaroni !== undefined ? activeStocks.Makaroni : (productScope === 'daily' ? 22 : 100);
             const basrengTarget = activeStocks.Basreng !== undefined ? activeStocks.Basreng : (productScope === 'daily' ? 0 : 50);
 
             if (makaroniTarget === 0) {
@@ -1575,7 +1559,7 @@
             }
         }
 
-        checkAuth();
+        init();
     </script>
 </body>
 </html>

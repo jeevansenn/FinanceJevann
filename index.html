@@ -120,7 +120,6 @@
         .hero-title { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.03em; color: #ffffff; margin-bottom: 0.5rem; }
         .hero-subtitle { color: var(--text-secondary); font-size: 0.95rem; max-width: 520px; margin: 0 auto; }
 
-        /* KARTU RINGKASAN GLOBAL & WEEKLY METRICS */
         .global-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
         .global-card {
             background: linear-gradient(145deg, #181818 0%, #121212 100%);
@@ -133,7 +132,6 @@
         .global-card-value.expense { color: var(--red-accent); }
         .global-card-sub { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
 
-        /* TOOLBAR EKSPOR & BACKUP DATA */
         .data-toolbar { display: flex; gap: 0.75rem; justify-content: flex-end; margin-bottom: 2rem; flex-wrap: wrap; }
         .btn-toolbar {
             background: var(--bg-card); border: 1px solid var(--border-subtle); color: #ffffff;
@@ -142,7 +140,6 @@
         }
         .btn-toolbar:hover { border-color: var(--border-hover); background: #252525; transform: translateY(-2px); }
 
-        /* SEGMEN PILIHAN TANGGAL */
         .date-section-wrapper { margin-bottom: 2.5rem; }
         .date-section-title {
             font-size: 0.9rem; font-weight: 800; color: var(--text-secondary); margin-bottom: 1rem;
@@ -182,12 +179,10 @@
         }
         .btn-add-date-card:hover { border-color: var(--green-accent); color: var(--green-accent); background: var(--green-bg); }
 
-        /* TAB VIEWS */
         .tab-content { display: none; }
         .tab-content.active-tab { display: block; animation: fadeIn 0.35s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Metric Cards Utama */
         .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem; }
         .summary-card {
             background-color: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 1.5rem;
@@ -201,16 +196,15 @@
         .summary-value.income { color: var(--green-accent); }
         .summary-value.expense { color: var(--red-accent); }
 
-        /* Breakdown Cards Row */
-        .method-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+        .method-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
         .method-card {
             background: var(--bg-card-inner); border: 1px solid var(--border-subtle); border-radius: var(--radius-card);
             padding: 1.15rem 1.4rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s;
         }
-        .method-card-info h4 { font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.2rem; }
-        .method-card-info .amount { font-size: 1.4rem; font-weight: 800; color: #ffffff; }
+        .method-card-info h4 { font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.2rem; }
+        .method-card-info .amount { font-size: 1.3rem; font-weight: 800; color: #ffffff; }
 
-        .badge-method-summary { padding: 4px 10px; border-radius: var(--radius-pill); font-size: 0.7rem; font-weight: 800; }
+        .badge-method-summary { padding: 4px 10px; border-radius: var(--radius-pill); font-size: 0.68rem; font-weight: 800; }
         .badge-method-summary.cash { background: var(--cash-bg); border: 1px solid var(--cash-border); color: var(--cash-accent); }
         .badge-method-summary.qris { background: var(--qris-bg); border: 1px solid var(--qris-border); color: var(--qris-accent); }
         .badge-method-summary.unpaid { background: var(--unpaid-bg); border: 1px solid var(--unpaid-border); color: var(--unpaid-accent); }
@@ -223,7 +217,6 @@
         .harbor-card { background-color: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 1.75rem; }
         .card-header-title { font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 
-        /* Form Controls */
         .type-pill-container {
             position: relative; display: grid; grid-template-columns: 1fr 1fr; background: var(--bg-card-inner);
             padding: 5px; border-radius: var(--radius-pill); border: 1px solid var(--border-subtle); margin-bottom: 1.5rem;
@@ -292,7 +285,6 @@
         .btn-action-icon.edit:hover { color: var(--green-accent); background: var(--green-bg); transform: scale(1.1); }
         .btn-action-icon.settle:hover { color: var(--cash-accent); background: var(--cash-bg); transform: scale(1.1); }
 
-        /* PRODUCT SALES CARDS & ANALYTICS */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
         .product-card {
             background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 1.75rem;
@@ -319,7 +311,6 @@
         .product-progress-bar { width: 100%; height: 8px; background: var(--bg-card-inner); border-radius: var(--radius-pill); overflow: hidden; }
         .product-progress-fill { height: 100%; border-radius: var(--radius-pill); transition: width 0.5s ease; }
 
-        /* LOYALTY POINTS TAB STYLES */
         .point-rank-card {
             background: var(--bg-card-inner); border: 1px solid var(--border-subtle); border-radius: 16px;
             padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s; margin-bottom: 0.85rem;
@@ -340,7 +331,6 @@
         .point-val { font-size: 1.4rem; font-weight: 900; color: var(--green-accent); }
         .point-subtext { font-size: 0.72rem; color: var(--text-secondary); }
 
-        /* MODAL ELEGAN */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75);
             backdrop-filter: blur(8px); z-index: 200; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;
@@ -372,7 +362,6 @@
             margin-bottom: 1rem; transition: all 0.25s;
         }
 
-        /* ADMIN ONLY ELEMENTS VISIBILITY */
         .admin-only { display: none !important; }
         body.is-admin .admin-only { display: flex !important; }
         body.is-admin div.admin-only { display: block !important; }
@@ -387,6 +376,7 @@
                 <ul class="nav-links">
                     <li><a id="navOverview" class="active" onclick="switchTab('overview')">Overview</a></li>
                     <li><a id="navProduct" onclick="switchTab('product')">Product</a></li>
+                    <li><a id="navWallet" onclick="switchTab('wallet')">👛 Wallet</a></li>
                     <li><a id="navPoint" onclick="switchTab('point')">⭐ Point</a></li>
                 </ul>
                 <div class="nav-right-group">
@@ -464,35 +454,35 @@
                 </div>
             </div>
 
-            <!-- Breakdown Cash, QRIS, Kasbon, Pre-Order -->
+            <!-- Breakdown Saldo Cash, Saldo Digital, Kasbon, Pre-Order -->
             <div class="method-summary-grid">
                 <div class="method-card">
                     <div class="method-card-info">
-                        <h4>💵 Total Tunai / Cash</h4>
+                        <h4>💵 Saldo Cash / Tunai</h4>
                         <div class="amount" id="totalCash">Rp 0</div>
                     </div>
-                    <span class="badge-method-summary cash">Cash Balance</span>
+                    <span class="badge-method-summary cash">Tunai</span>
                 </div>
                 <div class="method-card">
                     <div class="method-card-info">
-                        <h4>📱 Total Non-Tunai / QRIS</h4>
-                        <div class="amount" id="totalQris">Rp 0</div>
+                        <h4>💳 Total Saldo Digital (QRIS)</h4>
+                        <div class="amount" id="totalDigital" style="color:var(--qris-accent);">Rp 0</div>
                     </div>
-                    <span class="badge-method-summary qris">QRIS Balance</span>
+                    <span class="badge-method-summary qris">Non-Tunai</span>
                 </div>
                 <div class="method-card">
                     <div class="method-card-info">
-                        <h4>⏳ Kasbon / Belum Bayar</h4>
+                        <h4>⏳ Kasbon / Piutang</h4>
                         <div class="amount" id="totalUnpaid">Rp 0</div>
                     </div>
-                    <span class="badge-method-summary unpaid">Piutang Active</span>
+                    <span class="badge-method-summary unpaid">Kasbon</span>
                 </div>
                 <div class="method-card">
                     <div class="method-card-info">
-                        <h4>📦 Pre-Order / Pending</h4>
+                        <h4>📦 Pre-Order / PO</h4>
                         <div class="amount" id="totalPO">Rp 0</div>
                     </div>
-                    <span class="badge-method-summary po">PO Pending</span>
+                    <span class="badge-method-summary po">PO</span>
                 </div>
             </div>
 
@@ -523,6 +513,7 @@
                             <select id="category" class="form-input" onchange="handleCategoryChange(this.value)">
                                 <option value="Makaroni">Makaroni (Rp 5.000/porsi)</option>
                                 <option value="Basreng">Basreng (Rp 5.000/porsi)</option>
+                                <option value="Ojek">Ojek</option>
                                 <option value="Andrea">Andrea</option>
                                 <option value="Lainnya">Lainnya...</option>
                             </select>
@@ -545,8 +536,8 @@
                         <div class="form-item">
                             <label for="paymentMethod">Metode Pembayaran / Status</label>
                             <select id="paymentMethod" class="form-input" required>
-                                <option value="Cash">💵 Cash</option>
-                                <option value="QRIS">📱 QRIS</option>
+                                <option value="Cash">💵 Cash / Tunai</option>
+                                <option value="QRIS">💳 Non-Tunai / QRIS</option>
                                 <option value="Belum Bayar">⏳ Belum Bayar / Kasbon</option>
                                 <option value="PO Pending">📦 Pre-Order (Pending)</option>
                             </select>
@@ -566,13 +557,67 @@
                             <button class="filter-pill" onclick="setFilter('income')">Masuk</button>
                             <button class="filter-pill" onclick="setFilter('expense')">Keluar</button>
                             <button class="filter-pill" onclick="setFilter('Cash')">💵 Cash</button>
-                            <button class="filter-pill" onclick="setFilter('QRIS')">📱 QRIS</button>
+                            <button class="filter-pill" onclick="setFilter('QRIS')">💳 QRIS</button>
                             <button class="filter-pill" onclick="setFilter('Belum Bayar')">⏳ Kasbon</button>
                             <button class="filter-pill" onclick="setFilter('PO Pending')">📦 PO</button>
                         </div>
                     </div>
 
                     <ul class="tx-list" id="txList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB WALLET GLOBAL -->
+        <div id="tabWallet" class="tab-content">
+            <div class="harbor-card" style="margin-bottom:1.5rem;">
+                <div class="card-header-title">
+                    <span>👛 Master Wallet Total Saldo</span>
+                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                        <button class="btn-edit-stock admin-only" style="background:var(--green-bg); color:var(--green-accent); border-color:var(--green-border);" onclick="openTransferModal()">🔄 Transfer / Pindah Saldo (Cash ↔ Digital)</button>
+                        <button class="btn-edit-stock admin-only" onclick="openMasterWalletModal('all')">✏️ Edit Saldo Awal Master</button>
+                    </div>
+                </div>
+                <div style="text-align:center; padding:1.5rem 1rem; background:var(--bg-card-inner); border-radius:18px; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+                    <div style="font-size:0.85rem; color:var(--text-secondary); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.4rem;">Total Saldo Gabungan (Cash + Digital)</div>
+                    <div style="font-size:2.8rem; font-weight:900; color:var(--green-accent);" id="walletGrandTotal">Rp 0</div>
+                    <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.4rem;">Total riil sisa uang tunai & digital Anda (Termasuk penyesuaian transfer antar saldo)</div>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="summary-card" style="border-top: 4px solid var(--cash-accent);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                            <div class="summary-label" style="margin-bottom:0;">💵 Total Saldo Cash Saat Ini</div>
+                            <button class="btn-edit-stock admin-only" onclick="openMasterWalletModal('cash')">✏️ Edit Saldo Cash</button>
+                        </div>
+                        <div class="summary-value" style="color:var(--cash-accent);" id="walletNetCash">Rp 0</div>
+                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:0.8rem; line-height:1.4;">
+                            • Saldo Awal Master: <strong id="walletBaseCashDisplay" style="color:#fff;">Rp 0</strong><br>
+                            • Mutasi Penjualan Web: <strong id="walletNetCashChange" style="color:#fff;">Rp 0</strong><br>
+                            • Penyesuaian Transfer: <strong id="walletTransferCashNet" style="color:#fff;">Rp 0</strong>
+                        </div>
+                    </div>
+
+                    <div class="summary-card" style="border-top: 4px solid var(--qris-accent);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                            <div class="summary-label" style="margin-bottom:0;">💳 Total Saldo Digital Saat Ini</div>
+                            <button class="btn-edit-stock admin-only" onclick="openMasterWalletModal('digital')">✏️ Edit Saldo Digital</button>
+                        </div>
+                        <div class="summary-value" style="color:var(--qris-accent);" id="walletNetDigital">Rp 0</div>
+                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:0.8rem; line-height:1.4;">
+                            • Saldo Awal Master: <strong id="walletBaseDigitalDisplay" style="color:#fff;">Rp 0</strong><br>
+                            • Mutasi Penjualan Web: <strong id="walletNetDigitalChange" style="color:#fff;">Rp 0</strong><br>
+                            • Penyesuaian Transfer: <strong id="walletTransferDigitalNet" style="color:#fff;">Rp 0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIWAYAT LOG TRANSFER -->
+                <div style="margin-top:2rem;">
+                    <div class="card-header-title" style="font-size:1rem; margin-bottom:0.8rem;">
+                        <span>📜 Riwayat Mutasi Transfer Antar Wallet</span>
+                    </div>
+                    <ul class="tx-list" id="transferLogsList"></ul>
                 </div>
             </div>
         </div>
@@ -729,23 +774,79 @@
         </div>
     </div>
 
-    <!-- MODAL PELUNASAN / STATUS PO -->
+    <!-- MODAL TRANSFER / PINDAH SALDO (CASH ↔ DIGITAL) -->
+    <div class="modal-overlay" id="transferModal">
+        <div class="modal-card">
+            <div class="modal-title">🔄 Transfer / Pindah Saldo</div>
+            <div class="modal-desc">Pindahkan saldo Cash ke Digital (misal: Setor Tunai) atau sebaliknya (Tarik Tunai).</div>
+            
+            <div class="form-item">
+                <label for="transferDirection">Arah Pemindahan Saldo</label>
+                <select id="transferDirection" class="form-input">
+                    <option value="cash_to_digital">💵 Cash ➡️ 💳 Digital (Setor Tunai)</option>
+                    <option value="digital_to_cash">💳 Digital ➡️ 💵 Cash (Tarik Tunai)</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label for="transferAmountInput">Nominal Transfer (Rp)</label>
+                <input type="number" id="transferAmountInput" class="form-input" placeholder="0" min="1" required>
+            </div>
+
+            <div class="form-item">
+                <label for="transferNoteInput">Keterangan (Opsional)</label>
+                <input type="text" id="transferNoteInput" class="form-input" placeholder="misal: Setor tunai ke rekening/bank">
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-cancel" onclick="closeTransferModal()">Batal</button>
+                <button type="button" class="btn-primary-white" style="flex:1;" onclick="confirmProcessTransfer()">Proses Transfer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDIT MASTER WALLET -->
+    <div class="modal-overlay" id="masterWalletModal">
+        <div class="modal-card">
+            <div class="modal-title" id="masterWalletTitle">✏️ Edit Saldo Wallet</div>
+            <div class="modal-desc">Masukkan saldo dasar yang Anda miliki. Saldo ini akan terus otomatis dihitung dengan mutasi pemasukan/pengeluaran web.</div>
+            
+            <div class="form-item" id="groupMasterCash">
+                <label for="masterCashInput">Saldo Master Cash (Rp)</label>
+                <input type="number" id="masterCashInput" class="form-input" placeholder="0">
+            </div>
+
+            <div class="form-item" id="groupMasterDigital">
+                <label for="masterDigitalInput">Saldo Master Digital / QRIS (Rp)</label>
+                <input type="number" id="masterDigitalInput" class="form-input" placeholder="0">
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-cancel" onclick="closeMasterWalletModal()">Batal</button>
+                <button type="button" class="btn-primary-white" style="flex:1;" onclick="confirmSaveMasterWallet()">Simpan Saldo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDIT METHOD PEMBAYARAN / STATUS -->
     <div class="modal-overlay" id="settleModal">
         <div class="modal-card">
-            <div class="modal-title" id="settleModalTitle">✅ Update Status Transaksi</div>
-            <div class="modal-desc" id="settleModalDesc">Pilih metode pembayaran yang diterima untuk memproses transaksi ini.</div>
+            <div class="modal-title" id="settleModalTitle">✅ Update Metode / Status Pembayaran</div>
+            <div class="modal-desc" id="settleModalDesc">Pilih metode pembayaran terbaru untuk transaksi ini.</div>
             
             <div class="form-item">
                 <label for="settleMethod">Metode Pembayaran Terbaru</label>
                 <select id="settleMethod" class="form-input">
                     <option value="Cash">💵 Cash / Tunai</option>
-                    <option value="QRIS">📱 QRIS / Non-Tunai</option>
+                    <option value="QRIS">💳 Non-Tunai / QRIS</option>
+                    <option value="Belum Bayar">⏳ Belum Bayar / Kasbon</option>
+                    <option value="PO Pending">📦 Pre-Order (Pending)</option>
                 </select>
             </div>
 
             <div class="modal-actions">
                 <button type="button" class="btn-modal-cancel" onclick="closeSettleModal()">Batal</button>
-                <button type="button" class="btn-primary-white" style="flex:1;" onclick="confirmSettle()">Update Status</button>
+                <button type="button" class="btn-primary-white" style="flex:1;" onclick="confirmSettle()">Simpan Perubahan</button>
             </div>
         </div>
     </div>
@@ -806,27 +907,56 @@
             render();
         }
 
-        const initialData = [
-            // 5 Agustus 2026
-            { id: 208, desc: 'Bevin', amount: 5000, qty: 1, type: 'income', method: 'QRIS', category: 'Makaroni', date: '2026-08-05' },
-            { id: 207, desc: 'Jolyn', amount: 10000, qty: 2, type: 'income', method: 'Cash', category: 'Makaroni', date: '2026-08-05' },
-            { id: 201, desc: 'Aldo', amount: 5000, qty: 1, type: 'income', method: 'QRIS', category: 'Makaroni', date: '2026-08-05' },
-            { id: 202, desc: 'Alfin Pratama', amount: 10000, qty: 2, type: 'income', method: 'QRIS', category: 'Makaroni', date: '2026-08-05' },
-            { id: 203, desc: 'Erlic', amount: 5000, qty: 1, type: 'income', method: 'QRIS', category: 'Makaroni', date: '2026-08-05' },
-            { id: 204, desc: 'Surya', amount: 5000, qty: 1, type: 'income', method: 'Cash', category: 'Makaroni', date: '2026-08-05' },
-            { id: 205, desc: 'Jashun', amount: 15000, qty: 3, type: 'income', method: 'Cash', category: 'Makaroni', date: '2026-08-05' },
-            { id: 206, desc: 'Jessica', amount: 5000, qty: 1, type: 'income', method: 'Cash', category: 'Makaroni', date: '2026-08-05' },
-            
-            // 4 Agustus 2026
-            { id: 101, desc: 'Alfin', amount: 10000, qty: 2, type: 'income', method: 'Cash', category: 'Makaroni', date: '2026-08-04' }
-        ];
+        // DATA UTAMA TRANSAKSI LENGKAP
+        const initialBackupData = {
+          "dates": [
+            "2026-08-04",
+            "2026-08-05"
+          ],
+          "masterWallet": {
+            "baseCash": 0,
+            "baseDigital": 0
+          },
+          "walletTransfers": [],
+          "stocksDaily": {
+            "Makaroni": 22,
+            "Basreng": 0
+          },
+          "stocksWeekly": {
+            "Makaroni": 100,
+            "Basreng": 50
+          },
+          "transactions": [
+            { "id": 1785921891890, "desc": "Andrea", "amount": 9000, "qty": 1, "type": "income", "method": "Cash", "category": "Ojek", "date": "2026-08-05" },
+            { "id": 1785921870008, "desc": "verena", "amount": 10000, "qty": 2, "type": "income", "method": "QRIS", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 1785921847116, "desc": "pengeluaran admin bca", "amount": 10000, "qty": 1, "type": "expense", "method": "Cash", "category": "Pengeluaran", "date": "2026-08-05" },
+            { "id": 1785909017353, "desc": "Thian", "amount": 5000, "qty": 1, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 1785909008203, "desc": "Justin", "amount": 5000, "qty": 1, "type": "income", "method": "QRIS", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 1785909002219, "desc": "Brillian", "amount": 15000, "qty": 3, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 1785908995861, "desc": "Elvera", "amount": 5000, "qty": 1, "type": "income", "method": "QRIS", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 1785905855632, "desc": "pengeluaran sim motor & uang kas", "amount": 13500, "qty": 1, "type": "expense", "method": "QRIS", "category": "Pengeluaran", "date": "2026-08-05" },
+            { "id": 1785902684225, "desc": "Kevia", "amount": 5000, "qty": 1, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 208, "desc": "Bevin", "amount": 5000, "qty": 1, "type": "income", "method": "QRIS", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 207, "desc": "Jolyn", "amount": 10000, "qty": 2, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 201, "desc": "Aldo", "amount": 5000, "qty": 1, "type": "income", "method": "QRIS", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 202, "desc": "Alvin Pratama", "amount": 10000, "qty": 2, "type": "income", "method": "QRIS", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 203, "desc": "Erlic", "amount": 5000, "qty": 1, "type": "income", "method": "QRIS", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 204, "desc": "Surya", "amount": 5000, "qty": 1, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 205, "desc": "Jashun", "amount": 15000, "qty": 3, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 206, "desc": "Jessica", "amount": 5000, "qty": 1, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 209, "desc": "Meli", "amount": 5000, "qty": 1, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-05" },
+            { "id": 1785902651888, "desc": "Nanda", "amount": 5000, "qty": 1, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-04" },
+            { "id": 101, "desc": "Alfin", "amount": 10000, "qty": 2, "type": "income", "method": "Cash", "category": "Makaroni", "date": "2026-08-04" }
+          ]
+        };
 
-        let transactions = JSON.parse(localStorage.getItem('harbor_finance_v17_tx')) || initialData;
-        let createdDates = JSON.parse(localStorage.getItem('harbor_finance_v17_dates')) || ['2026-08-04', '2026-08-05'];
+        let transactions = JSON.parse(localStorage.getItem('harbor_finance_v21_tx')) || initialBackupData.transactions;
+        let createdDates = JSON.parse(localStorage.getItem('harbor_finance_v21_dates')) || initialBackupData.dates;
+        let masterWallet = JSON.parse(localStorage.getItem('harbor_finance_v21_wallet')) || initialBackupData.masterWallet;
+        let walletTransfers = JSON.parse(localStorage.getItem('harbor_finance_v21_transfers')) || initialBackupData.walletTransfers;
         
-        // TARGET STOK DITAMBAHKAN MENJADI 22 UNTUK MAKARONI
-        let productStocksDaily = JSON.parse(localStorage.getItem('harbor_finance_v17_stocks_daily')) || { Makaroni: 22, Basreng: 0 };
-        let productStocksWeekly = JSON.parse(localStorage.getItem('harbor_finance_v17_stocks_weekly')) || { Makaroni: 100, Basreng: 50 };
+        let productStocksDaily = JSON.parse(localStorage.getItem('harbor_finance_v21_stocks_daily')) || initialBackupData.stocksDaily;
+        let productStocksWeekly = JSON.parse(localStorage.getItem('harbor_finance_v21_stocks_weekly')) || initialBackupData.stocksWeekly;
 
         let activeStockProduct = 'Makaroni';
         let activeSettleTxId = null;
@@ -871,6 +1001,88 @@
             document.getElementById('qrisModal').classList.remove('active-modal');
         }
 
+        function openTransferModal() {
+            document.getElementById('transferAmountInput').value = '';
+            document.getElementById('transferNoteInput').value = '';
+            document.getElementById('transferModal').classList.add('active-modal');
+        }
+
+        function closeTransferModal() {
+            document.getElementById('transferModal').classList.remove('active-modal');
+        }
+
+        function confirmProcessTransfer() {
+            const dir = document.getElementById('transferDirection').value;
+            const amt = parseFloat(document.getElementById('transferAmountInput').value) || 0;
+            const note = document.getElementById('transferNoteInput').value.trim();
+
+            if (amt <= 0) {
+                alert('Masukkan nominal transfer yang valid.');
+                return;
+            }
+
+            walletTransfers.unshift({
+                id: Date.now(),
+                direction: dir,
+                amount: amt,
+                note: note || (dir === 'cash_to_digital' ? 'Setor Cash ke Digital' : 'Tarik Digital ke Cash'),
+                date: new Date().toISOString().split('T')[0]
+            });
+
+            localStorage.setItem('harbor_finance_v21_transfers', JSON.stringify(walletTransfers));
+            closeTransferModal();
+            renderWalletTab();
+        }
+
+        function deleteTransferLog(id) {
+            if (confirm('Hapus log pemindahan saldo ini?')) {
+                walletTransfers = walletTransfers.filter(t => t.id !== id);
+                localStorage.setItem('harbor_finance_v21_transfers', JSON.stringify(walletTransfers));
+                renderWalletTab();
+            }
+        }
+
+        function openMasterWalletModal(mode = 'all') {
+            const groupCash = document.getElementById('groupMasterCash');
+            const groupDigital = document.getElementById('groupMasterDigital');
+            const title = document.getElementById('masterWalletTitle');
+
+            document.getElementById('masterCashInput').value = masterWallet.baseCash || 0;
+            document.getElementById('masterDigitalInput').value = masterWallet.baseDigital || 0;
+
+            if (mode === 'cash') {
+                title.textContent = '✏️ Edit Saldo Master Cash';
+                groupCash.style.display = 'block';
+                groupDigital.style.display = 'none';
+            } else if (mode === 'digital') {
+                title.textContent = '✏️ Edit Saldo Master Digital';
+                groupCash.style.display = 'none';
+                groupDigital.style.display = 'block';
+            } else {
+                title.textContent = '✏️ Edit Semua Saldo Awal Wallet';
+                groupCash.style.display = 'block';
+                groupDigital.style.display = 'block';
+            }
+
+            document.getElementById('masterWalletModal').classList.add('active-modal');
+        }
+
+        function closeMasterWalletModal() {
+            document.getElementById('masterWalletModal').classList.remove('active-modal');
+        }
+
+        function confirmSaveMasterWallet() {
+            const cashVal = parseFloat(document.getElementById('masterCashInput').value) || 0;
+            const digitalVal = parseFloat(document.getElementById('masterDigitalInput').value) || 0;
+
+            masterWallet.baseCash = cashVal;
+            masterWallet.baseDigital = digitalVal;
+
+            localStorage.setItem('harbor_finance_v21_wallet', JSON.stringify(masterWallet));
+            closeMasterWalletModal();
+            renderWalletTab();
+        }
+
         function getWeekBounds(dateStr) {
             const curr = new Date(dateStr);
             const day = curr.getDay();
@@ -894,13 +1106,15 @@
             currentTab = tab;
             document.getElementById('navOverview').className = tab === 'overview' ? 'active' : '';
             document.getElementById('navProduct').className = tab === 'product' ? 'active' : '';
+            document.getElementById('navWallet').className = tab === 'wallet' ? 'active' : '';
             document.getElementById('navPoint').className = tab === 'point' ? 'active' : '';
 
             document.getElementById('tabOverview').className = tab === 'overview' ? 'tab-content active-tab' : 'tab-content';
             document.getElementById('tabProduct').className = tab === 'product' ? 'tab-content active-tab' : 'tab-content';
+            document.getElementById('tabWallet').className = tab === 'wallet' ? 'tab-content active-tab' : 'tab-content';
             document.getElementById('tabPoint').className = tab === 'point' ? 'tab-content active-tab' : 'tab-content';
 
-            document.getElementById('dateSectionWrapper').style.display = tab === 'point' ? 'none' : 'block';
+            document.getElementById('dateSectionWrapper').style.display = (tab === 'point' || tab === 'wallet') ? 'none' : 'block';
 
             if (tab === 'overview') {
                 document.getElementById('pageTitle').textContent = 'Income & Expenses';
@@ -909,6 +1123,10 @@
                 document.getElementById('pageTitle').textContent = 'Product Sales Analytics';
                 document.getElementById('pageSubtitle').textContent = 'Pantau porsi terjual & rasio stok target Makaroni dan Basreng secara akurat.';
                 renderProductAnalytics();
+            } else if (tab === 'wallet') {
+                document.getElementById('pageTitle').textContent = 'Master Wallet Analytics';
+                document.getElementById('pageSubtitle').textContent = 'Pantau total akumulasi seluruh saldo cash dan digital secara menyeluruh.';
+                renderWalletTab();
             } else {
                 document.getElementById('pageTitle').textContent = 'Loyalty Points Leaderboard';
                 document.getElementById('pageSubtitle').textContent = 'Peringkat pelanggan setia berdasarkan total porsi pembelian.';
@@ -985,7 +1203,7 @@
             if (newDate) {
                 if (!createdDates.includes(newDate)) {
                     createdDates.push(newDate);
-                    localStorage.setItem('harbor_finance_v17_dates', JSON.stringify(createdDates));
+                    localStorage.setItem('harbor_finance_v21_dates', JSON.stringify(createdDates));
                 }
                 closeDateModal();
                 selectDate(newDate);
@@ -1013,10 +1231,10 @@
 
             if (productScope === 'daily') {
                 productStocksDaily[activeStockProduct] = cleanVal;
-                localStorage.setItem('harbor_finance_v17_stocks_daily', JSON.stringify(productStocksDaily));
+                localStorage.setItem('harbor_finance_v21_stocks_daily', JSON.stringify(productStocksDaily));
             } else {
                 productStocksWeekly[activeStockProduct] = cleanVal;
-                localStorage.setItem('harbor_finance_v17_stocks_weekly', JSON.stringify(productStocksWeekly));
+                localStorage.setItem('harbor_finance_v21_stocks_weekly', JSON.stringify(productStocksWeekly));
             }
 
             closeStockModal();
@@ -1028,8 +1246,9 @@
             const tx = transactions.find(t => t.id === id);
             if (!tx) return;
 
-            document.getElementById('settleModalTitle').textContent = `✅ Process Status: ${tx.desc}`;
-            document.getElementById('settleModalDesc').textContent = `Proses transaksi (${tx.method}) sebesar ${formatRp(tx.amount)} menjadi lunas. Porsi stok & poin akan dihitung otomatis.`;
+            document.getElementById('settleModalTitle').textContent = `✅ Update Metode/Status: ${tx.desc}`;
+            document.getElementById('settleModalDesc').textContent = `Ubah metode pembayaran (misal Cash ke QRIS) sebesar ${formatRp(tx.amount)}.`;
+            document.getElementById('settleMethod').value = tx.method;
             document.getElementById('settleModal').classList.add('active-modal');
         }
 
@@ -1043,10 +1262,11 @@
             const txIndex = transactions.findIndex(t => t.id === activeSettleTxId);
             if (txIndex !== -1) {
                 transactions[txIndex].method = newMethod;
-                localStorage.setItem('harbor_finance_v17_tx', JSON.stringify(transactions));
+                localStorage.setItem('harbor_finance_v21_tx', JSON.stringify(transactions));
                 renderDateGrid();
                 render();
                 if (currentTab === 'product') renderProductAnalytics();
+                if (currentTab === 'wallet') renderWalletTab();
                 if (currentTab === 'point') renderPointAnalytics();
             }
             closeSettleModal();
@@ -1058,8 +1278,8 @@
                 createdDates = createdDates.filter(d => d !== dStr);
                 transactions = transactions.filter(t => t.date !== dStr);
 
-                localStorage.setItem('harbor_finance_v17_dates', JSON.stringify(createdDates));
-                localStorage.setItem('harbor_finance_v17_tx', JSON.stringify(transactions));
+                localStorage.setItem('harbor_finance_v21_dates', JSON.stringify(createdDates));
+                localStorage.setItem('harbor_finance_v21_tx', JSON.stringify(transactions));
 
                 const remainingDates = Array.from(new Set([...createdDates, ...transactions.map(t => t.date)])).sort();
                 selectedDate = remainingDates.length > 0 ? remainingDates[remainingDates.length - 1] : new Date().toISOString().split('T')[0];
@@ -1127,6 +1347,7 @@
             renderDateGrid();
             render();
             if (currentTab === 'product') renderProductAnalytics();
+            if (currentTab === 'wallet') renderWalletTab();
             if (currentTab === 'point') renderPointAnalytics();
         }
 
@@ -1146,7 +1367,7 @@
 
             if (tx.type === 'income') {
                 quantityInput.value = tx.qty || 1;
-                if (['Makaroni', 'Basreng', 'Andrea'].includes(tx.category)) {
+                if (['Makaroni', 'Basreng', 'Ojek', 'Andrea'].includes(tx.category)) {
                     categorySelect.value = tx.category;
                     handleCategoryChange(tx.category);
                 } else {
@@ -1224,10 +1445,11 @@
                 });
             }
 
-            localStorage.setItem('harbor_finance_v17_tx', JSON.stringify(transactions));
+            localStorage.setItem('harbor_finance_v21_tx', JSON.stringify(transactions));
             renderDateGrid();
             render();
             if (currentTab === 'product') renderProductAnalytics();
+            if (currentTab === 'wallet') renderWalletTab();
             if (currentTab === 'point') renderPointAnalytics();
 
             resetForm();
@@ -1235,10 +1457,11 @@
 
         function deleteTx(id) {
             transactions = transactions.filter(t => t.id !== id);
-            localStorage.setItem('harbor_finance_v17_tx', JSON.stringify(transactions));
+            localStorage.setItem('harbor_finance_v21_tx', JSON.stringify(transactions));
             renderDateGrid();
             render();
             if (currentTab === 'product') renderProductAnalytics();
+            if (currentTab === 'wallet') renderWalletTab();
             if (currentTab === 'point') renderPointAnalytics();
         }
 
@@ -1289,7 +1512,7 @@
 
             const qrisIncome = dayTx.filter(t => t.type === 'income' && t.method === 'QRIS').reduce((a, b) => a + b.amount, 0);
             const qrisExpense = dayTx.filter(t => t.type === 'expense' && t.method === 'QRIS').reduce((a, b) => a + b.amount, 0);
-            const totalQris = qrisIncome - qrisExpense;
+            const totalDigital = qrisIncome - qrisExpense;
 
             const unpaidSum = dayTx.filter(t => t.type === 'income' && t.method === 'Belum Bayar').reduce((a, b) => a + b.amount, 0);
             const poSum = dayTx.filter(t => t.type === 'income' && t.method === 'PO Pending').reduce((a, b) => a + b.amount, 0);
@@ -1299,20 +1522,90 @@
             document.getElementById('totalExpense').textContent = `-${formatRp(expense)}`;
             
             document.getElementById('totalCash').textContent = formatRp(totalCash);
-            document.getElementById('totalQris').textContent = formatRp(totalQris);
+            document.getElementById('totalDigital').textContent = formatRp(totalDigital);
             document.getElementById('totalUnpaid').textContent = formatRp(unpaidSum);
             document.getElementById('totalPO').textContent = formatRp(poSum);
+        }
+
+        function renderWalletTab() {
+            const allCashIncome = transactions.filter(t => t.type === 'income' && t.method === 'Cash').reduce((a, b) => a + b.amount, 0);
+            const allCashExpense = transactions.filter(t => t.type === 'expense' && t.method === 'Cash').reduce((a, b) => a + b.amount, 0);
+            const netCashChange = allCashIncome - allCashExpense;
+
+            const allDigitalIncome = transactions.filter(t => t.type === 'income' && t.method === 'QRIS').reduce((a, b) => a + b.amount, 0);
+            const allDigitalExpense = transactions.filter(t => t.type === 'expense' && t.method === 'QRIS').reduce((a, b) => a + b.amount, 0);
+            const netDigitalChange = allDigitalIncome - allDigitalExpense;
+
+            // Hitung net transfer
+            let transferCashNet = 0;
+            let transferDigitalNet = 0;
+
+            walletTransfers.forEach(tf => {
+                if (tf.direction === 'cash_to_digital') {
+                    transferCashNet -= tf.amount;
+                    transferDigitalNet += tf.amount;
+                } else if (tf.direction === 'digital_to_cash') {
+                    transferCashNet += tf.amount;
+                    transferDigitalNet -= tf.amount;
+                }
+            });
+
+            const totalNetCash = (masterWallet.baseCash || 0) + netCashChange + transferCashNet;
+            const totalNetDigital = (masterWallet.baseDigital || 0) + netDigitalChange + transferDigitalNet;
+            const grandTotal = totalNetCash + totalNetDigital;
+
+            document.getElementById('walletGrandTotal').textContent = formatRp(grandTotal);
+            document.getElementById('walletNetCash').textContent = formatRp(totalNetCash);
+            document.getElementById('walletNetDigital').textContent = formatRp(totalNetDigital);
+
+            document.getElementById('walletBaseCashDisplay').textContent = formatRp(masterWallet.baseCash || 0);
+            document.getElementById('walletNetCashChange').textContent = `${netCashChange >= 0 ? '+' : ''}${formatRp(netCashChange)}`;
+            document.getElementById('walletTransferCashNet').textContent = `${transferCashNet >= 0 ? '+' : ''}${formatRp(transferCashNet)}`;
+
+            document.getElementById('walletBaseDigitalDisplay').textContent = formatRp(masterWallet.baseDigital || 0);
+            document.getElementById('walletNetDigitalChange').textContent = `${netDigitalChange >= 0 ? '+' : ''}${formatRp(netDigitalChange)}`;
+            document.getElementById('walletTransferDigitalNet').textContent = `${transferDigitalNet >= 0 ? '+' : ''}${formatRp(transferDigitalNet)}`;
+
+            // Render Log Transfer List
+            const logEl = document.getElementById('transferLogsList');
+            if (walletTransfers.length === 0) {
+                logEl.innerHTML = `<div style="text-align:center; padding:2rem; color:#666;">Belum ada riwayat pemindahan saldo.</div>`;
+                return;
+            }
+
+            logEl.innerHTML = walletTransfers.map(tf => {
+                const isCashToDigital = tf.direction === 'cash_to_digital';
+                const label = isCashToDigital ? '💵 Cash ➡️ 💳 Digital' : '💳 Digital ➡️ 💵 Cash';
+                const badgeClass = isCashToDigital ? 'method-qris' : 'method-cash';
+                const delBtn = isAdmin ? `<button class="btn-action-icon delete" title="Hapus Mutasi" onclick="deleteTransferLog(${tf.id})">✕</button>` : '';
+
+                return `
+                    <li class="tx-card-item">
+                        <div>
+                            <div class="tx-title">
+                                <span>${tf.note}</span>
+                                <span class="method-badge ${badgeClass}">${label}</span>
+                            </div>
+                            <div class="tx-meta">${tf.date}</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                            <div class="tx-val" style="color:#ffffff;">${formatRp(tf.amount)}</div>
+                            ${delBtn}
+                        </div>
+                    </li>
+                `;
+            }).join('');
         }
 
         function getCategoryBadgeClass(category) {
             if (category === 'Makaroni') return 'tag-makaroni';
             if (category === 'Basreng') return 'tag-basreng';
-            if (category === 'Andrea') return 'tag-andrea';
+            if (category === 'Ojek' || category === 'Andrea') return 'tag-andrea';
             return 'tag-lainnya';
         }
 
         function getMethodBadgeInfo(method) {
-            if (method === 'QRIS') return { class: 'method-qris', label: '📱 QRIS' };
+            if (method === 'QRIS') return { class: 'method-qris', label: '💳 QRIS' };
             if (method === 'Belum Bayar') return { class: 'method-unpaid', label: '⏳ Kasbon' };
             if (method === 'PO Pending') return { class: 'method-po', label: '📦 PO (Pending)' };
             return { class: 'method-cash', label: '💵 Cash' };
@@ -1336,8 +1629,7 @@
                 const methodInfo = getMethodBadgeInfo(tx.method);
                 const qtyLabel = (tx.type === 'income' && tx.qty > 1) ? `<span style="font-size:0.75rem; color:#f59e0b; font-weight:800;">(${tx.qty}x)</span>` : '';
                 
-                const isSettleable = tx.method === 'Belum Bayar' || tx.method === 'PO Pending';
-                const settleBtn = (isSettleable && isAdmin) ? `<button class="btn-action-icon settle" title="Update Status Lunas/Kirim" onclick="openSettleModal(${tx.id})">✅</button>` : '';
+                const settleBtn = isAdmin ? `<button class="btn-action-icon settle" title="Ubah Metode/Status Pembayaran" onclick="openSettleModal(${tx.id})">✅</button>` : '';
                 const editBtn = isAdmin ? `<button class="btn-action-icon edit" title="Edit Transaksi Ini" onclick="editTx(${tx.id})">✏️</button>` : '';
                 const deleteBtn = isAdmin ? `<button class="btn-action-icon delete" title="Hapus Transaksi Ini" onclick="deleteTx(${tx.id})">✕</button>` : '';
 
@@ -1496,7 +1788,6 @@
             }).join('');
         }
 
-        // FITUR EXPORT EXCEL (CSV)
         function exportToCSV() {
             let csvContent = "data:text/csv;charset=utf-8,ID,Tanggal,Deskripsi,Kategori,Tipe,Metode,Kuantitas,Nominal\n";
             transactions.forEach(t => {
@@ -1511,10 +1802,11 @@
             document.body.removeChild(link);
         }
 
-        // FITUR BACKUP JSON
         function downloadJSONBackup() {
             const backupData = {
                 dates: createdDates,
+                masterWallet: masterWallet,
+                walletTransfers: walletTransfers,
                 stocksDaily: productStocksDaily,
                 stocksWeekly: productStocksWeekly,
                 transactions: transactions
@@ -1528,7 +1820,6 @@
             dlAnchor.remove();
         }
 
-        // FITUR RESTORE / IMPORT JSON
         function importJSONBackup(event) {
             const fileReader = new FileReader();
             fileReader.onload = function(e) {
@@ -1537,13 +1828,17 @@
                     if (parsed.transactions && parsed.dates) {
                         transactions = parsed.transactions;
                         createdDates = parsed.dates;
+                        if (parsed.masterWallet) masterWallet = parsed.masterWallet;
+                        if (parsed.walletTransfers) walletTransfers = parsed.walletTransfers;
                         if (parsed.stocksDaily) productStocksDaily = parsed.stocksDaily;
                         if (parsed.stocksWeekly) productStocksWeekly = parsed.stocksWeekly;
 
-                        localStorage.setItem('harbor_finance_v17_tx', JSON.stringify(transactions));
-                        localStorage.setItem('harbor_finance_v17_dates', JSON.stringify(createdDates));
-                        localStorage.setItem('harbor_finance_v17_stocks_daily', JSON.stringify(productStocksDaily));
-                        localStorage.setItem('harbor_finance_v17_stocks_weekly', JSON.stringify(productStocksWeekly));
+                        localStorage.setItem('harbor_finance_v21_tx', JSON.stringify(transactions));
+                        localStorage.setItem('harbor_finance_v21_dates', JSON.stringify(createdDates));
+                        localStorage.setItem('harbor_finance_v21_wallet', JSON.stringify(masterWallet));
+                        localStorage.setItem('harbor_finance_v21_transfers', JSON.stringify(walletTransfers));
+                        localStorage.setItem('harbor_finance_v21_stocks_daily', JSON.stringify(productStocksDaily));
+                        localStorage.setItem('harbor_finance_v21_stocks_weekly', JSON.stringify(productStocksWeekly));
 
                         alert('Data berhasil dipulihkan!');
                         init();

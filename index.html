@@ -173,7 +173,7 @@
         .btn-date-action:hover { background: var(--red-accent); }
 
         .btn-add-date-card {
-            min-width: 110px; height: 125px; background: rgba(255, 255, 255, 0.03); border: 2px dashed var(--border-subtle);
+            min-width: 130px; height: 125px; background: rgba(255, 255, 255, 0.03); border: 2px dashed var(--border-subtle);
             border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;
             gap: 6px; cursor: pointer; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; transition: all 0.25s; flex-shrink: 0;
         }
@@ -904,6 +904,7 @@
                 btnAuth.classList.remove('admin-active');
                 if (overviewLayout) overviewLayout.classList.add('full-width');
             }
+            renderDateGrid();
             render();
         }
 
@@ -1084,7 +1085,7 @@
         }
 
         function getWeekBounds(dateStr) {
-            const curr = new Date(dateStr);
+            const curr = new Date(dateStr + 'T00:00:00');
             const day = curr.getDay();
             const diffToMonday = curr.getDate() - day + (day === 0 ? -6 : 1);
             const monday = new Date(curr.setDate(diffToMonday));
@@ -1296,7 +1297,7 @@
             dates.sort();
 
             let gridHTML = dates.map(dStr => {
-                const dateObj = new Date(dStr);
+                const dateObj = new Date(dStr + 'T00:00:00');
                 const dayNum = dateObj.getDate();
                 const monthStr = dateObj.toLocaleDateString('id-ID', { month: 'short' });
                 
@@ -1323,21 +1324,20 @@
                 `;
             }).join('');
 
-            if (isAdmin) {
-                gridHTML += `
-                    <div class="btn-add-date-card" onclick="openDateModal()">
-                        <span style="font-size:1.5rem;">+</span>
-                        <span>Tambah Hari</span>
-                    </div>
-                `;
-            }
+            // Tombol tambah tanggal sekarang selalu dapat diakses oleh semua pengguna
+            gridHTML += `
+                <div class="btn-add-date-card" onclick="openDateModal()">
+                    <span style="font-size:1.5rem;">+</span>
+                    <span>Tambah Hari</span>
+                </div>
+            `;
 
             dateGrid.innerHTML = gridHTML;
         }
 
         function selectDate(dStr) {
             selectedDate = dStr;
-            const dateObj = new Date(dStr);
+            const dateObj = new Date(dStr + 'T00:00:00');
             const formattedDisplay = dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
             
             document.getElementById('selectedDateDisplay').textContent = formattedDisplay;
